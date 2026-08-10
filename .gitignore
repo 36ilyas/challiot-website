@@ -1,0 +1,6 @@
+.claude/
+.playwright-mcp/
+.thumbnail
+uploads/
+node_modules/
+*.log

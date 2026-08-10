@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ernst Challiot &amp; Sohn GmbH — Ihre Glaserei in Mönchengladbach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{--acc:#0B63CE;--g:#00A45E;--y:#FFD400;--r:#E5251F;--b:#0B63CE;--bl:#4A93EA;--ink:#0D1114;--paper:#F2F2EF;}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;overflow-x:hidden;background:#0D1114;color:#0D1114;font-family:Archivo,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--acc);}
+p{text-wrap:pretty;}
+::selection{background:var(--acc);color:#0D1114;}
+@keyframes chMarquee{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
+@keyframes chScroll{0%{transform:translateY(0);opacity:0;}30%{opacity:1;}100%{transform:translateY(22px);opacity:0;}}
+@keyframes chFadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</helmet>
+
+<div style="background:#F2F2EF;color:#0D1114;overflow-x:clip;">
+
+<header data-hd style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(18px,4vw,56px);transition:background .6s cubic-bezier(.22,1,.36,1),box-shadow .6s,padding .6s;">
+  <a href="#start" data-nav style="display:flex;align-items:center;gap:14px;line-height:1;color:#F2F2EF;min-width:0;">
+    <span data-logobox style="display:flex;align-items:center;border-radius:7px;transition:background .5s,padding .5s;">
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/6204bb6bd42ac9cc3f4407e7_logo.png" alt="Ernst Challiot &amp; Sohn GmbH" style="height:clamp(18px,2vw,24px);width:auto;" />
+    </span>
+  </a>
+  <nav data-desknav style="display:flex;align-items:center;gap:clamp(14px,2vw,30px);">
+    <a href="#sortiment" data-nav data-hdlink style="font-size:13px;font-weight:500;letter-spacing:.02em;color:#F2F2EF;transition:color .5s,opacity .3s;opacity:.82;">Sortiment</a>
+    <a href="#reparatur" data-nav data-hdlink style="font-size:13px;font-weight:500;letter-spacing:.02em;color:#F2F2EF;transition:color .5s,opacity .3s;opacity:.82;">Reparatur</a>
+    <a href="#ausstellung" data-nav data-hdlink style="font-size:13px;font-weight:500;letter-spacing:.02em;color:#F2F2EF;transition:color .5s,opacity .3s;opacity:.82;">Ausstellung</a>
+    <a href="#faq" data-nav data-hdlink style="font-size:13px;font-weight:500;letter-spacing:.02em;color:#F2F2EF;transition:color .5s,opacity .3s;opacity:.82;">FAQ</a>
+    <a href="#kontakt" data-nav data-hdcta style="display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:100px;background:#F2F2EF;color:#0D1114;font-size:13px;font-weight:600;transition:background .4s,color .4s,transform .4s cubic-bezier(.22,1,.36,1);">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--acc);"></span>Anfrage
+    </a>
+  </nav>
+  <button data-burger aria-label="Menü öffnen" style="display:none;align-items:center;gap:10px;padding:10px 16px 10px 18px;border:0;border-radius:100px;background:rgba(242,242,239,.12);backdrop-filter:blur(10px);color:#F2F2EF;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;cursor:pointer;">
+    MENÜ
+    <span style="display:flex;flex-direction:column;gap:4px;width:16px;">
+      <span data-bl1 style="display:block;height:1.5px;background:currentColor;transition:transform .45s cubic-bezier(.22,1,.36,1);"></span>
+      <span data-bl2 style="display:block;height:1.5px;background:currentColor;transition:transform .45s cubic-bezier(.22,1,.36,1),opacity .3s;"></span>
+    </span>
+  </button>
+</header>
+
+<div data-menu style="position:fixed;inset:0;z-index:95;background:#0D1114;color:#F2F2EF;display:flex;flex-direction:column;justify-content:space-between;padding:96px clamp(20px,6vw,48px) 36px;opacity:0;visibility:hidden;transform:translateY(-14px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),visibility .5s;">
+  <span style="position:absolute;top:0;left:0;right:0;display:flex;height:4px;"><span style="flex:1;background:var(--g);"></span><span style="flex:1;background:var(--y);"></span><span style="flex:1;background:var(--bl);"></span><span style="flex:1;background:var(--r);"></span></span>
+  <nav style="display:flex;flex-direction:column;gap:2px;">
+    <a href="#sortiment" data-nav data-mlink style="display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(242,242,239,.12);font-size:clamp(30px,9vw,44px);font-weight:700;letter-spacing:-.02em;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;opacity:.4;">01</span>Sortiment</a>
+    <a href="#reparatur" data-nav data-mlink style="display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(242,242,239,.12);font-size:clamp(30px,9vw,44px);font-weight:700;letter-spacing:-.02em;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;opacity:.4;">02</span>Reparatur</a>
+    <a href="#ausstellung" data-nav data-mlink style="display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(242,242,239,.12);font-size:clamp(30px,9vw,44px);font-weight:700;letter-spacing:-.02em;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;opacity:.4;">03</span>Ausstellung</a>
+    <a href="#faq" data-nav data-mlink style="display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(242,242,239,.12);font-size:clamp(30px,9vw,44px);font-weight:700;letter-spacing:-.02em;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;opacity:.4;">04</span>FAQ</a>
+    <a href="#kontakt" data-nav data-mlink style="display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid rgba(242,242,239,.12);font-size:clamp(30px,9vw,44px);font-weight:700;letter-spacing:-.02em;"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;opacity:.4;">05</span>Kontakt</a>
+  </nav>
+  <div style="display:flex;flex-wrap:wrap;gap:18px 28px;align-items:flex-end;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;line-height:1.9;opacity:.75;">
+    <div>
+      Limitenstr. 81–87<br />41236 Mönchengladbach
+    </div>
+    <div style="text-align:right;">
+      <a href="tel:+49216649007" style="color:var(--y);">02166 49007</a><br />
+      <a href="mailto:info@challiot.de">info@challiot.de</a>
+    </div>
+  </div>
+</div>
+
+<section id="start" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;background:#0D1114;color:#F2F2EF;overflow:hidden;padding:0 clamp(18px,4vw,56px) clamp(28px,4vw,48px);">
+  <video data-herovid autoplay muted loop playsinline preload="metadata" src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/6204c63856aafd15187840ce_Challiot%20Video-transcode.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78;filter:brightness(1.1) saturate(1.05);"></video>
+  <div style="position:absolute;inset:0;background:radial-gradient(85% 55% at 76% 6%,rgba(74,147,234,.30),transparent 62%),radial-gradient(65% 48% at 10% 90%,rgba(0,164,94,.20),transparent 64%),linear-gradient(180deg,rgba(13,17,20,.62) 0%,rgba(13,17,20,.16) 40%,rgba(13,17,20,.74) 100%);"></div>
+  <div style="position:relative;width:100%;max-width:1560px;margin:0 auto;padding-top:120px;">
+    <div data-reveal style="display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.72;margin-bottom:clamp(18px,3vw,34px);">
+      <span style="display:flex;gap:4px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--g);"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--y);"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--bl);"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--r);"></span></span>SEIT VIER GENERATIONEN IN RHEYDT
+    </div>
+    <h1 data-reveal style="margin:0;font-size:clamp(52px,11.4vw,178px);line-height:.86;font-weight:800;letter-spacing:-.045em;text-wrap:balance;text-shadow:0 4px 40px rgba(13,17,20,.45);">
+      Ihr Experte<br />für <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--y);">Glas</span>
+    </h1>
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:clamp(26px,4vw,48px);">
+      <p data-reveal style="margin:0;max-width:44ch;font-size:clamp(15px,1.5vw,19px);line-height:1.6;opacity:.94;text-shadow:0 2px 18px rgba(13,17,20,.65);">
+        Duschabtrennungen, Spiegel, Küchenrückwände, Ganzglastüren und Glasmöbel — beraten, gemessen, in eigener Werkstatt gefertigt und montiert.
+      </p>
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:12px;">
+        <a href="#kontakt" data-nav data-btn style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:100px;background:var(--acc);color:#FFFFFF;font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),filter .4s;">Schnellanfrage<span style="font-size:16px;line-height:1;">→</span></a>
+        <a href="tel:+49216649007" data-btn style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:100px;border:1px solid rgba(242,242,239,.45);background:rgba(13,17,20,.28);backdrop-filter:blur(8px);color:#F2F2EF;font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),background .4s;">02166 49007</a>
+      </div>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;margin-top:clamp(34px,5vw,64px);border-top:1px solid rgba(242,242,239,.28);padding-top:20px;text-shadow:0 2px 16px rgba(13,17,20,.6);">
+      <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--g);">4.</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">GENERATION</div></div>
+      <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--y);">300 m²</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">AUSSTELLUNG</div></div>
+      <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--bl);">4,7 ★</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">108 REZENSIONEN</div></div>
+      <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--r);">2</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">STANDORTE IN MG</div></div>
+    </div>
+  </div>
+  <div style="position:relative;display:flex;justify-content:center;margin-top:26px;height:26px;">
+    <span style="display:block;width:1px;height:26px;background:linear-gradient(180deg,var(--acc),transparent);animation:chScroll 2.4s cubic-bezier(.4,0,.2,1) infinite;"></span>
+  </div>
+</section>
+
+<section style="background:#F2F2EF;padding:clamp(72px,11vw,150px) clamp(18px,4vw,56px);">
+  <div style="max-width:1560px;margin:0 auto;">
+    <p data-reveal style="margin:0;max-width:22ch;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">01 — WER WIR SIND</p>
+    <h2 data-reveal style="margin:clamp(22px,3vw,40px) 0 0;max-width:20ch;font-size:clamp(30px,5.2vw,74px);line-height:1.02;font-weight:700;letter-spacing:-.04em;text-wrap:balance;">
+      Vom Zuschnitt bis zur Montage — <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;">alles aus einer Hand.</span>
+    </h2>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,80px);margin-top:clamp(34px,5vw,64px);">
+      <p data-reveal style="flex:1 1 320px;margin:0;font-size:clamp(15px,1.4vw,18px);line-height:1.7;opacity:.72;">
+        Unser Angebot umfasst seit jeher Farben, Lacke, Tapeten und Glas aller Art. Im Laufe der Jahre hat sich daraus eine Spezialisierung auf Glas im Interieur entwickelt — ohne das Ur-Geschäft für Maler- und Tischlereibedarf aus den Augen zu verlieren.
+      </p>
+      <p data-reveal style="flex:1 1 320px;margin:0;font-size:clamp(15px,1.4vw,18px);line-height:1.7;opacity:.72;">
+        Heute stehen wir für individuelle Lösungen im Innenausbau mit Glas: von der maßgefertigten Duschabtrennung über Spiegel und Küchenrückwände bis zu Glastüren und Absturzsicherungen im Innen- und Außenbereich.
+      </p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:clamp(20px,2.4vw,36px);margin-top:clamp(48px,7vw,96px);">
+      <div data-reveal style="border-top:3px solid var(--g);padding-top:18px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--g);">SCHRITT 01</div>
+        <h3 style="margin:14px 0 8px;font-size:clamp(19px,1.8vw,24px);font-weight:700;letter-spacing:-.02em;">Beratung</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;opacity:.62;">Persönlich in der Ausstellung — mit Materialmustern in der Hand.</p>
+      </div>
+      <div data-reveal style="border-top:3px solid var(--y);padding-top:18px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:#B08E00;">SCHRITT 02</div>
+        <h3 style="margin:14px 0 8px;font-size:clamp(19px,1.8vw,24px);font-weight:700;letter-spacing:-.02em;">Aufmaß</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;opacity:.62;">Wir messen bei Ihnen vor Ort — millimetergenau, auch bei schiefen Wänden.</p>
+      </div>
+      <div data-reveal style="border-top:3px solid var(--b);padding-top:18px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--b);">SCHRITT 03</div>
+        <h3 style="margin:14px 0 8px;font-size:clamp(19px,1.8vw,24px);font-weight:700;letter-spacing:-.02em;">Produktion</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;opacity:.62;">Zuschnitt, Bohrung und Veredelung in unserer eigenen Glashalle.</p>
+      </div>
+      <div data-reveal style="border-top:3px solid var(--r);padding-top:18px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--r);">SCHRITT 04</div>
+        <h3 style="margin:14px 0 8px;font-size:clamp(19px,1.8vw,24px);font-weight:700;letter-spacing:-.02em;">Montage</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;opacity:.62;">Sauber eingebaut von Monteuren, die seit Jahren im Team sind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sortiment" style="scroll-margin-top:80px;background:#0D1114;color:#F2F2EF;padding:clamp(72px,11vw,150px) clamp(18px,4vw,56px);">
+  <div style="max-width:1560px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
+      <div>
+        <p data-reveal style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">02 — SORTIMENT</p>
+        <h2 data-reveal style="margin:clamp(20px,2.6vw,34px) 0 0;font-size:clamp(30px,5.2vw,74px);line-height:1.02;font-weight:700;letter-spacing:-.04em;">Was wir aus Glas <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;">machen</span></h2>
+      </div>
+      <p data-reveal style="margin:0;max-width:34ch;font-size:14px;line-height:1.7;opacity:.6;">Alles nach Maß gefertigt. Wählen Sie eine Kategorie für Details.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,72px);margin-top:clamp(38px,5vw,72px);">
+      <div style="flex:1 1 440px;min-width:0;">
+        <div data-prod data-i="01" data-title="Duschabtrennungen" data-desc="Rahmenlose Ganzglasduschen aus Einscheibensicherheitsglas, millimetergenau für Ihren Raum gefertigt. Lieferzeit ca. 3 Wochen." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">01</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Duschabtrennungen</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Rahmenlose Ganzglasduschen aus Einscheibensicherheitsglas, millimetergenau für Ihren Raum gefertigt.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="02" data-title="Spiegel" data-desc="Wandspiegel, Spiegelwände und beleuchtete Spiegel nach Maß — mit facettiertem oder poliertem Rand, auf Wunsch mit Bohrungen." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">02</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Spiegel</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Wandspiegel, Spiegelwände und beleuchtete Spiegel nach Maß.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="03" data-title="Küchenrückwände" data-desc="Fugenlos, hygienisch und leicht zu reinigen. In jedem RAL-Ton, mit Motiv oder in Klarglas — Montage innerhalb von 14 Tagen." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">03</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Küchenrückwände</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Fugenlos und hygienisch, in jedem Farbton oder mit Motiv.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="04" data-title="Ganzglastüren &amp; Trennwände" data-desc="Ganzglastüren, Schiebetüren und Trennwände bringen Licht in dunkle Flure — mit Beschlägen von Dorma, MWE und Pauli + Sohn." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">04</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Ganzglastüren &amp; Trennwände</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Ganzglastüren, Schiebetüren und Trennwände für lichte Räume.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="05" data-title="Glasmöbel" data-desc="Tischplatten, Vitrinen, Regalböden und Sideboards — individuell zugeschnitten, gesäumt und poliert." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">05</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Glasmöbel</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Tischplatten, Vitrinen und Regale — individuell gefertigt.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="06" data-title="Glas-Reparaturservice" data-desc="Bei Glasbruch schnell zur Stelle — vom Fenster über Glasmöbel bis zum Schaufenster. Auf Wunsch rechnen wir direkt mit Ihrer Versicherung ab." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">06</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Glas-Reparaturservice</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Bei Glasbruch schnell zur Stelle, auch für Versicherungsschäden.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="07" data-title="Glasvordächer" data-desc="Vordächer und Dachverglasungen für Eingang und Terrasse — statisch geprüft, aus Verbundsicherheitsglas." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">07</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Glasvordächer</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Vordächer und Dachverglasungen für Eingang und Terrasse.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="08" data-title="Glasbrüstungen" data-desc="Absturzsicherungen für Balkon, Treppe und Galerie — innen wie außen, nach den geltenden Normen ausgeführt." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">08</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Glasbrüstungen</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Absturzsicherungen für Innen und Außen, geprüft und montiert.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="09" data-title="Windfanganlagen" data-desc="Ganzglasanlagen für Eingangsbereiche in Gewerbe und Wohnbau — repräsentativ und windgeschützt." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">09</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Windfanganlagen</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Ganzglasanlagen für Eingangsbereiche in Gewerbe und Wohnbau.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+        <div data-prod data-i="10" data-title="Farben, Lacke &amp; Tapeten" data-desc="Das Ur-Geschäft: Farben, Lacke, Tapeten, Bodenbeläge und Zubehör für Maler und Tischler — direkt im Fachgeschäft." style="display:flex;align-items:center;gap:16px;padding:clamp(14px,1.6vw,20px) 4px;border-top:1px solid rgba(242,242,239,.14);border-bottom:1px solid rgba(242,242,239,.14);cursor:pointer;transition:padding-left .5s cubic-bezier(.22,1,.36,1),border-color .5s;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.42;">10</span>
+          <div style="flex:1;min-width:0;">
+            <span data-ptitle style="display:block;font-size:clamp(20px,2.5vw,34px);font-weight:600;letter-spacing:-.03em;transition:color .4s,opacity .4s;">Farben, Lacke &amp; Tapeten</span>
+            <p data-pmob style="display:none;margin:8px 0 0;font-size:14px;line-height:1.6;opacity:.6;">Farben, Lacke, Tapeten und Bodenbeläge im Fachgeschäft.</p>
+          </div>
+          <span data-parrow style="font-size:18px;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .5s cubic-bezier(.22,1,.36,1);color:var(--acc);">→</span>
+        </div>
+      </div>
+
+      <div data-preview style="flex:1 1 380px;min-width:0;align-self:flex-start;position:sticky;top:100px;">
+        <div style="position:relative;aspect-ratio:4/5;border:1px solid rgba(242,242,239,.14);border-radius:2px;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(242,242,239,.05) 0 2px,transparent 2px 11px);">
+          <div data-pvglow style="position:absolute;inset:0;background:radial-gradient(90% 70% at 30% 0%,rgba(74,147,234,.24),transparent 62%);transition:background .6s cubic-bezier(.22,1,.36,1);"></div>
+          <div data-pvnum style="position:absolute;top:18px;left:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--bl);transition:opacity .35s,color .4s;">01</div>
+          <div style="position:absolute;left:20px;right:20px;bottom:20px;">
+            <div data-pvtitle style="font-size:clamp(22px,2.2vw,30px);font-weight:700;letter-spacing:-.03em;transition:opacity .35s,transform .5s cubic-bezier(.22,1,.36,1);">Duschabtrennungen</div>
+            <p data-pvdesc style="margin:10px 0 0;font-size:14px;line-height:1.65;opacity:.65;transition:opacity .35s,transform .5s cubic-bezier(.22,1,.36,1);">Rahmenlose Ganzglasduschen aus Einscheibensicherheitsglas, millimetergenau für Ihren Raum gefertigt. Lieferzeit ca. 3 Wochen.</p>
+          </div>
+          <div style="position:absolute;top:18px;right:20px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.16em;opacity:.34;">BILDPLATZ 4:5</div>
+        </div>
+        <a href="#kontakt" data-nav data-btn style="display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:15px 24px;border-radius:100px;border:1px solid rgba(242,242,239,.28);font-size:13px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),background .4s;">Projekt anfragen<span style="font-size:15px;line-height:1;">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reparatur" style="scroll-margin-top:80px;background:#F2F2EF;padding:clamp(72px,11vw,150px) clamp(18px,4vw,56px);">
+  <div style="max-width:1560px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(30px,5vw,80px);">
+    <div style="flex:1 1 320px;min-width:0;">
+      <p data-reveal style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">03 — REPARATUR</p>
+      <h2 data-reveal style="margin:clamp(20px,2.6vw,34px) 0 0;font-size:clamp(30px,5vw,68px);line-height:1.02;font-weight:700;letter-spacing:-.04em;text-wrap:balance;">Glasbruch? <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--r);">Wir sind da.</span></h2>
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(26px,3vw,40px);">
+        <a href="tel:+49216649007" data-btn style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:100px;background:#0D1114;color:#F2F2EF;font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),background .4s;">02166 49007 anrufen</a>
+        <a href="#kontakt" data-nav data-btn style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:100px;border:1px solid rgba(13,17,20,.2);font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),background .4s;">Kontaktformular</a>
+      </div>
+    </div>
+    <div style="flex:1 1 380px;min-width:0;">
+      <p data-reveal style="margin:0;font-size:clamp(15px,1.4vw,18px);line-height:1.7;opacity:.72;">
+        Bei Glasbruch sind wir Ihr erster Ansprechpartner in Rheydt und Mönchengladbach. Wir reparieren alles aus Glas — vom Fenster über Glasmöbel bis zum Schaufenster. Ob Privat- oder Geschäftskunde, ob großer oder kleiner Auftrag.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:clamp(26px,3vw,40px);">
+        <div data-reveal style="border-top:1px solid rgba(13,17,20,.14);padding-top:16px;">
+          <h3 style="margin:0 0 8px;font-size:16px;font-weight:700;letter-spacing:-.01em;">Direkt mit der Versicherung</h3>
+          <p style="margin:0;font-size:14px;line-height:1.65;opacity:.62;">Mit einer Abtretungserklärung rechnen wir Ihren Schaden direkt ab — ohne Umwege für Sie.</p>
+        </div>
+        <div data-reveal style="border-top:1px solid rgba(13,17,20,.14);padding-top:16px;">
+          <h3 style="margin:0 0 8px;font-size:16px;font-weight:700;letter-spacing:-.01em;">Meist sofort lieferbar</h3>
+          <p style="margin:0;font-size:14px;line-height:1.65;opacity:.62;">Die meisten Glassorten liegen bei uns im Lager. Zuschnitt und Bohrung garantiert zum übernächsten Werktag.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ausstellung" style="scroll-margin-top:80px;background:#F2F2EF;padding:0 clamp(18px,4vw,56px) clamp(72px,11vw,150px);">
+  <div style="max-width:1560px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(24px,3vw,44px);">
+    <figure data-reveal style="flex:1 1 420px;min-width:0;margin:0;position:relative;border-radius:2px;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(13,17,20,.05) 0 2px,transparent 2px 11px);aspect-ratio:4/3;">
+      <img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/62f3b9647d04302916fe0830_challiot-ausstellung.jpg" alt="Ausstellung der Glaserei Challiot in Mönchengladbach" data-img style="width:100%;height:100%;object-fit:cover;" />
+      <figcaption style="position:absolute;left:16px;bottom:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:#F2F2EF;mix-blend-mode:difference;">AUSSTELLUNG · 300 m²</figcaption>
+    </figure>
+    <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;justify-content:center;">
+      <p data-reveal style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">04 — AUSSTELLUNG</p>
+      <h2 data-reveal style="margin:20px 0 0;font-size:clamp(28px,3.8vw,52px);line-height:1.05;font-weight:700;letter-spacing:-.035em;text-wrap:balance;">Glas will man <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;">anfassen.</span></h2>
+      <p data-reveal style="margin:22px 0 0;max-width:46ch;font-size:clamp(15px,1.4vw,18px);line-height:1.7;opacity:.72;">
+        In unserer hellen Ausstellung machen Sie sich auf über 300 Quadratmetern mit dem Werkstoff Glas in all seinen Ausprägungen vertraut. Gerade beim Glas spielt die Haptik eine große Rolle — Oberflächen, Kanten und Farbtöne wirken erst im Raum richtig.
+      </p>
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:26px;margin-top:28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;line-height:1.9;opacity:.68;">
+        <div>Mo – Do<br />Fr<br />Sa</div>
+        <div>07.30 – 17.00 Uhr<br />07.30 – 16.30 Uhr<br />08.30 – 13.00 Uhr</div>
+        <div style="opacity:.7;">Parkplätze<br />im Hof</div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1560px;margin:clamp(24px,3vw,44px) auto 0;display:flex;flex-wrap:wrap;gap:clamp(24px,3vw,44px);">
+    <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;justify-content:center;">
+      <p data-reveal style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">05 — TEAM</p>
+      <h2 data-reveal style="margin:20px 0 0;font-size:clamp(28px,3.8vw,52px);line-height:1.05;font-weight:700;letter-spacing:-.035em;text-wrap:balance;">Für Sie <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;">vor Ort.</span></h2>
+      <p data-reveal style="margin:22px 0 0;max-width:46ch;font-size:clamp(15px,1.4vw,18px);line-height:1.7;opacity:.72;">
+        Bei uns erhalten Sie ein Rundum-sorglos-Paket: kompetente und freundliche Beratung, Aufmaß bei Ihnen vor Ort, Produktion in der eigenen Werkstatt und Montage durch erfahrene Mitarbeiter.
+      </p>
+    </div>
+    <figure data-reveal style="flex:1 1 420px;min-width:0;margin:0;position:relative;border-radius:2px;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(13,17,20,.05) 0 2px,transparent 2px 11px);aspect-ratio:4/3;">
+      <img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/62f3b9fcdf9145bba62047ba_challiot-fuer-sie-vor-ort.jpg" alt="Team der Glaserei Challiot beim Aufmaß vor Ort" data-img style="width:100%;height:100%;object-fit:cover;" />
+      <figcaption style="position:absolute;left:16px;bottom:14px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:#F2F2EF;mix-blend-mode:difference;">MONTAGE &amp; AUFMASS</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section style="background:#F2F2EF;padding:0 0 clamp(60px,8vw,110px);overflow:hidden;">
+  <div style="max-width:1560px;margin:0 auto;padding:0 clamp(18px,4vw,56px);">
+    <p data-reveal style="margin:0 0 26px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">UNSERE PARTNER</p>
+  </div>
+  <div data-marquee style="position:relative;width:100%;overflow:hidden;border-top:1px solid rgba(13,17,20,.12);border-bottom:1px solid rgba(13,17,20,.12);padding:26px 0;">
+    <div data-track style="display:flex;align-items:center;gap:clamp(40px,6vw,90px);width:max-content;animation:chMarquee 38s linear infinite;">
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/62fa133a0045ed482b510cf2_dorma-logo.png" alt="Dorma" style="height:26px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/628346bc081a58f0499d2e30_KL-megla_logo_654c.png" alt="KL Megla" style="height:26px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/628346b1378ef55c6fbc0187_pauli-sohn-gmbh-logo-vector.png" alt="Pauli + Sohn" style="height:26px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/628346d33aea710b4a749922_marchio-logotipo-madras-2019-black-web_immagini_DInUf.png" alt="Madras" style="height:22px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/628346de3906462e49e9b765_MWE-Edelstahlmanufaktur-GmbH-Logo.jpeg" alt="MWE Edelstahlmanufaktur" style="height:26px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/62fa131c7accc72dbf4b6388_bohle-logo.jpg" alt="Bohle" style="height:24px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/6892f703ea529aa38c9e709a_Hesse_(Hamm)_logo.svg" alt="Hesse Lignal" style="height:24px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/62fa138f02b2f7598f136fdc_doerken-logo.png" alt="Dörken" style="height:24px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+      <img data-img src="https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/630f3df3c4aaa1d1188659fa_Logo_freigestellt_Magna_Glaskeramik.png" alt="Magna Glaskeramik" style="height:26px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.55;" />
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="scroll-margin-top:80px;background:#F2F2EF;padding:0 clamp(18px,4vw,56px) clamp(72px,11vw,150px);">
+  <div style="max-width:1560px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,80px);">
+    <div style="flex:0 1 280px;">
+      <p data-reveal style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">06 — FAQ</p>
+      <h2 data-reveal style="margin:20px 0 0;font-size:clamp(28px,3.8vw,52px);line-height:1.05;font-weight:700;letter-spacing:-.035em;">Häufige <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;">Fragen</span></h2>
+    </div>
+    <div style="flex:1 1 460px;min-width:0;">
+      <div data-faq style="border-top:1px solid rgba(13,17,20,.14);">
+        <button data-fq style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:20px 0;border:0;background:none;text-align:left;cursor:pointer;font-family:Archivo,sans-serif;font-size:clamp(16px,1.7vw,21px);font-weight:600;letter-spacing:-.02em;color:#0D1114;">
+          Rechnen Sie Glasschäden direkt mit meiner Versicherung ab?
+          <span data-fi style="flex:none;font-size:20px;font-weight:400;transition:transform .45s cubic-bezier(.22,1,.36,1);">+</span>
+        </button>
+        <div data-fa style="overflow:hidden;max-height:0;transition:max-height .55s cubic-bezier(.22,1,.36,1);">
+          <p style="margin:0 0 22px;max-width:62ch;font-size:15px;line-height:1.7;opacity:.68;">Wenn Sie Ihrer Versicherung den Schaden bereits gemeldet haben, unterschreiben Sie bei uns einfach eine Abtretungserklärung. Unsere Forderung rechnen wir dann direkt mit Ihrer Versicherung ab.</p>
+        </div>
+      </div>
+      <div data-faq style="border-top:1px solid rgba(13,17,20,.14);">
+        <button data-fq style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:20px 0;border:0;background:none;text-align:left;cursor:pointer;font-family:Archivo,sans-serif;font-size:clamp(16px,1.7vw,21px);font-weight:600;letter-spacing:-.02em;color:#0D1114;">
+          Wie reinige ich meine neue Ganzglasdusche am besten?
+          <span data-fi style="flex:none;font-size:20px;font-weight:400;transition:transform .45s cubic-bezier(.22,1,.36,1);">+</span>
+        </button>
+        <div data-fa style="overflow:hidden;max-height:0;transition:max-height .55s cubic-bezier(.22,1,.36,1);">
+          <p style="margin:0 0 22px;max-width:62ch;font-size:15px;line-height:1.7;opacity:.68;">Pflegen Sie die Dusche vom ersten Tag an, dann haben Kalk und Schmutz keine Chance. Essigwasser, Zitronenwasser oder Klarspüler eignen sich gut. Bitte nur weiche Tücher und keine scharfen Reiniger verwenden — und direkt nach dem Duschen abziehen.</p>
+        </div>
+      </div>
+      <div data-faq style="border-top:1px solid rgba(13,17,20,.14);">
+        <button data-fq style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:20px 0;border:0;background:none;text-align:left;cursor:pointer;font-family:Archivo,sans-serif;font-size:clamp(16px,1.7vw,21px);font-weight:600;letter-spacing:-.02em;color:#0D1114;">
+          Wie lange dauert die Produktion?
+          <span data-fi style="flex:none;font-size:20px;font-weight:400;transition:transform .45s cubic-bezier(.22,1,.36,1);">+</span>
+        </button>
+        <div data-fa style="overflow:hidden;max-height:0;transition:max-height .55s cubic-bezier(.22,1,.36,1);">
+          <p style="margin:0 0 22px;max-width:62ch;font-size:15px;line-height:1.7;opacity:.68;">Küchenrückwände und Spiegel montieren wir in der Regel innerhalb von 14 Tagen. Eine individuell gefertigte Ganzglasdusche aus Einscheibensicherheitsglas hat rund 3 Wochen Lieferzeit, ebenso Isolierglasscheiben. Reparaturen an Zimmertüren führen wir kurzfristig aus.</p>
+        </div>
+      </div>
+      <div data-faq style="border-top:1px solid rgba(13,17,20,.14);">
+        <button data-fq style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:20px 0;border:0;background:none;text-align:left;cursor:pointer;font-family:Archivo,sans-serif;font-size:clamp(16px,1.7vw,21px);font-weight:600;letter-spacing:-.02em;color:#0D1114;">
+          Kann ich eine Katzenklappe in eine Glasscheibe integrieren?
+          <span data-fi style="flex:none;font-size:20px;font-weight:400;transition:transform .45s cubic-bezier(.22,1,.36,1);">+</span>
+        </button>
+        <div data-fa style="overflow:hidden;max-height:0;transition:max-height .55s cubic-bezier(.22,1,.36,1);">
+          <p style="margin:0 0 22px;max-width:62ch;font-size:15px;line-height:1.7;opacity:.68;">Gerne fertigen wir eine Glasscheibe mit Lochbohrung, in die wir Ihre Wunsch-Katzenklappe integrieren. Die ursprüngliche Scheibe bauen wir fachgerecht aus, so dass Sie diese später wieder einsetzen können — besonders wichtig in Mietobjekten.</p>
+        </div>
+      </div>
+      <div data-faq style="border-top:1px solid rgba(13,17,20,.14);border-bottom:1px solid rgba(13,17,20,.14);">
+        <button data-fq style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:20px 0;border:0;background:none;text-align:left;cursor:pointer;font-family:Archivo,sans-serif;font-size:clamp(16px,1.7vw,21px);font-weight:600;letter-spacing:-.02em;color:#0D1114;">
+          Bekomme ich neue Dichtungen für meine Dusche?
+          <span data-fi style="flex:none;font-size:20px;font-weight:400;transition:transform .45s cubic-bezier(.22,1,.36,1);">+</span>
+        </button>
+        <div data-fa style="overflow:hidden;max-height:0;transition:max-height .55s cubic-bezier(.22,1,.36,1);">
+          <p style="margin:0 0 22px;max-width:62ch;font-size:15px;line-height:1.7;opacity:.68;">Dichtungen für Duschen, die Sie bei uns gekauft haben, geben wir Ihnen in der Regel sofort mit; für fremde Fabrikate bestellen wir sie. Alternativ bieten wir eine Duschinspektion an — inklusive Prüfung aller Einstellungen und Tausch maroder Dichtungen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="scroll-margin-top:80px;position:relative;background:#0D1114;color:#F2F2EF;padding:clamp(72px,11vw,150px) clamp(18px,4vw,56px) clamp(40px,5vw,64px);overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(70% 55% at 88% 0%,rgba(11,99,206,.26),transparent 62%),radial-gradient(55% 45% at 4% 100%,rgba(0,164,94,.18),transparent 64%);"></div>
+  <div style="position:relative;max-width:1560px;margin:0 auto;">
+    <p data-reveal style="margin:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.5;">07 — KONTAKT</p>
+    <h2 data-reveal style="margin:clamp(20px,2.6vw,34px) 0 0;max-width:16ch;font-size:clamp(32px,6.4vw,96px);line-height:.98;font-weight:800;letter-spacing:-.045em;text-wrap:balance;">Erzählen Sie uns von Ihrem <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--y);">Projekt.</span></h2>
+    <div data-reveal style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,4vw,48px);">
+      <a href="mailto:info@challiot.de" data-btn style="display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:100px;background:var(--y);color:#0D1114;font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),filter .4s;">info@challiot.de<span style="font-size:16px;line-height:1;">→</span></a>
+      <a href="tel:+49216649007" data-btn style="display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:100px;border:1px solid rgba(242,242,239,.28);font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),background .4s;">02166 49007</a>
+      <a href="https://g.page/challiot_glaserei_mg?share" target="_blank" rel="noopener" data-btn style="display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:100px;border:1px solid rgba(242,242,239,.28);font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),background .4s;">Route planen</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(24px,3vw,44px);margin-top:clamp(48px,7vw,96px);padding-top:26px;border-top:1px solid rgba(242,242,239,.16);">
+      <div data-reveal>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--g);margin-bottom:14px;">AUSSTELLUNG &amp; VERKAUF</div>
+        <p style="margin:0;font-size:15px;line-height:1.8;opacity:.78;">Limitenstr. 81 – 87<br />41236 Mönchengladbach<br /><span style="opacity:.6;">Parkplätze im Hof</span></p>
+      </div>
+      <div data-reveal>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--y);margin-bottom:14px;">WERKSTATT &amp; GLASHALLE</div>
+        <p style="margin:0;font-size:15px;line-height:1.8;opacity:.78;">Erftstr. 45<br />41238 Mönchengladbach<br /><span style="opacity:.6;">Mo – Fr 07.30 – 17.00 Uhr</span></p>
+      </div>
+      <div data-reveal>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--bl);margin-bottom:14px;">ÖFFNUNGSZEITEN</div>
+        <div style="display:flex;gap:18px;font-size:15px;line-height:1.8;opacity:.78;">
+          <div style="opacity:.62;">Mo – Do<br />Fr<br />Sa<br />So</div>
+          <div>07.30 – 17.00<br />07.30 – 16.30<br />08.30 – 13.00<br /><span style="opacity:.5;">geschlossen</span></div>
+        </div>
+      </div>
+      <div data-reveal>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--r);margin-bottom:14px;">FOLGEN SIE UNS</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.6;opacity:.78;">
+          <a href="https://www.instagram.com/challiot_glaserei_mg/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/challiot/" target="_blank" rel="noopener">Facebook</a>
+          <a href="mailto:info@challiot.de">info@challiot.de</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:clamp(40px,6vw,80px);padding-top:22px;border-top:1px solid rgba(242,242,239,.16);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;opacity:.48;">
+      <span>© 2026 ERNST CHALLIOT &amp; SOHN GMBH</span>
+      <span style="display:flex;gap:20px;"><a href="#">IMPRESSUM</a><a href="#">DATENSCHUTZ</a></span>
+    </div>
+  </div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#0B63CE&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#0B63CE&quot;,&quot;#00A45E&quot;,&quot;#FFD400&quot;,&quot;#E5251F&quot;],&quot;section&quot;:&quot;Design&quot;},&quot;heroVideo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Design&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { this.setup(); }
+  componentDidUpdate() { this.setup(); }
+  componentWillUnmount() { (this._off || []).forEach(f => f()); this._off = []; }
+
+  setup() {
+    const acc = this.props.accent || '#0B63CE';
+    document.documentElement.style.setProperty('--acc', acc);
+    if (this._done) return;
+    this._done = true;
+    this._off = [];
+    const on = (el, ev, fn, o) => { if (!el) return; el.addEventListener(ev, fn, o); this._off.push(() => el.removeEventListener(ev, fn, o)); };
+    const q = s => Array.from(document.querySelectorAll(s));
+
+    if (this.props.heroVideo === false) { const v = document.querySelector('[data-herovid]'); if (v) v.style.display = 'none'; }
+
+    // broken media never leaves a hole
+    q('[data-img]').forEach(img => {
+      const hide = () => { img.style.display = 'none'; };
+      if (img.complete && img.naturalWidth === 0) hide();
+      on(img, 'error', hide);
+    });
+    const vid = document.querySelector('[data-herovid]');
+    on(vid, 'error', () => { vid.style.display = 'none'; });
+
+    // scroll reveals — always end visible, IO is only the nicety
+    const rv = q('[data-reveal]');
+    const show = el => {
+      if (el.dataset.shown) return;
+      el.dataset.shown = '1';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    };
+    const sweep = () => {
+      const h = window.innerHeight || 800;
+      let k = 0;
+      rv.forEach(el => {
+        if (el.dataset.shown || el.getBoundingClientRect().top >= h * 0.96) return;
+        el.style.transitionDelay = Math.min(k * 70, 280) + 'ms';
+        k++;
+        show(el);
+      });
+    };
+    if ('IntersectionObserver' in window) {
+      rv.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        el.style.transition = 'opacity .9s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1)';
+      });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach((e, i) => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          el.style.transitionDelay = Math.min(i * 70, 280) + 'ms';
+          show(el);
+          io.unobserve(el);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      rv.forEach(el => io.observe(el));
+      this._off.push(() => io.disconnect());
+    } else {
+      rv.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    }
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    on(window, 'scroll', sweep, { passive: true });
+    on(window, 'resize', sweep);
+    on(window, 'hashchange', sweep);
+    on(window, 'load', sweep);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) rv.forEach(show);
+    const guard = setInterval(sweep, 400);
+    setTimeout(() => clearInterval(guard), 20000);
+    this._off.push(() => clearInterval(guard));
+
+    // header state
+    const hd = document.querySelector('[data-hd]');
+    const logo = document.querySelector('[data-hdlogo]');
+    const sub = null;
+    const links = q('[data-hdlink]');
+    const cta = document.querySelector('[data-hdcta]');
+    let last = 0, solid = null, menuOpen = false;
+    const paint = () => {
+      const y = window.scrollY;
+      const s = y > 60;
+      if (s !== solid) {
+        solid = s;
+        hd.style.background = s ? 'rgba(242,242,239,.86)' : 'transparent';
+        hd.style.backdropFilter = s ? 'saturate(160%) blur(14px)' : 'none';
+        hd.style.boxShadow = s ? '0 1px 0 rgba(13,17,20,.1)' : 'none';
+        hd.style.padding = s ? '10px clamp(18px,4vw,56px)' : '16px clamp(18px,4vw,56px)';
+        const c = s ? '#0D1114' : '#F2F2EF';
+        const lb = document.querySelector('[data-logobox]');
+        if (lb) {
+          lb.style.background = s ? '#0D1114' : 'transparent';
+          lb.style.padding = s ? '7px 11px' : '0';
+        }
+        if (logo) logo.style.color = c;
+        if (sub) sub.style.color = c;
+        links.forEach(l => { l.style.color = c; });
+        if (cta) { cta.style.background = s ? '#0D1114' : '#F2F2EF'; cta.style.color = s ? '#F2F2EF' : '#0D1114'; }
+        const b = document.querySelector('[data-burger]');
+        if (b) { b.style.color = c; b.style.background = s ? 'rgba(13,17,20,.07)' : 'rgba(242,242,239,.12)'; }
+      }
+      if (!menuOpen) {
+        const down = y > last && y > 220;
+        hd.style.transform = down ? 'translateY(-102%)' : 'translateY(0)';
+        hd.style.transition = 'transform .55s cubic-bezier(.22,1,.36,1),background .6s,padding .5s,box-shadow .5s';
+      }
+      last = y;
+    };
+    on(window, 'scroll', paint, { passive: true });
+    paint();
+
+    // burger menu
+    const menu = document.querySelector('[data-menu]');
+    const burger = document.querySelector('[data-burger]');
+    const l1 = document.querySelector('[data-bl1]');
+    const l2 = document.querySelector('[data-bl2]');
+    const setMenu = o => {
+      menuOpen = o;
+      menu.style.opacity = o ? '1' : '0';
+      menu.style.visibility = o ? 'visible' : 'hidden';
+      menu.style.transform = o ? 'translateY(0)' : 'translateY(-14px)';
+      if (l1) l1.style.transform = o ? 'translateY(2.75px) rotate(42deg)' : 'none';
+      if (l2) { l2.style.transform = o ? 'translateY(-2.75px) rotate(-42deg)' : 'none'; }
+      document.body.style.overflow = o ? 'hidden' : '';
+      if (o) { hd.style.transform = 'translateY(0)'; }
+      const c = o ? '#F2F2EF' : (solid ? '#0D1114' : '#F2F2EF');
+      if (logo) logo.style.color = c;
+      if (sub) sub.style.color = c;
+      if (burger) { burger.style.color = c; burger.style.background = o ? 'rgba(242,242,239,.12)' : (solid ? 'rgba(13,17,20,.07)' : 'rgba(242,242,239,.12)'); }
+      q('[data-mlink]').forEach((el, i) => {
+        el.style.transition = 'opacity .5s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)';
+        el.style.transitionDelay = (o ? 120 + i * 55 : 0) + 'ms';
+        el.style.opacity = o ? '1' : '0';
+        el.style.transform = o ? 'translateY(0)' : 'translateY(18px)';
+      });
+    };
+    setMenu(false);
+    on(burger, 'click', () => setMenu(!menuOpen));
+    on(window, 'keydown', e => { if (e.key === 'Escape' && menuOpen) setMenu(false); });
+
+    // smooth anchor scroll
+    q('[data-nav]').forEach(a => on(a, 'click', e => {
+      const id = a.getAttribute('href');
+      if (!id || id.charAt(0) !== '#' || id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      if (menuOpen) setMenu(false);
+      const y = t.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }));
+
+    // product index
+    const rows = q('[data-prod]');
+    const pvT = document.querySelector('[data-pvtitle]');
+    const pvD = document.querySelector('[data-pvdesc]');
+    const pvN = document.querySelector('[data-pvnum]');
+    const pal = ['#00A45E', '#FFD400', '#4A93EA', '#E5251F'];
+    const glow = ['rgba(0,164,94,.26)', 'rgba(255,212,0,.22)', 'rgba(74,147,234,.26)', 'rgba(229,37,31,.22)'];
+    const pvG = document.querySelector('[data-pvglow]');
+    const activate = row => {
+      const ci = rows.indexOf(row) % 4;
+      const col = pal[ci];
+      rows.forEach(r => {
+        const isA = r === row;
+        r.style.paddingLeft = isA ? '14px' : '4px';
+        r.style.borderTopColor = isA ? col : 'rgba(242,242,239,.14)';
+        const t = r.querySelector('[data-ptitle]');
+        const ar = r.querySelector('[data-parrow]');
+        if (t) { t.style.color = isA ? col : '#F2F2EF'; t.style.opacity = isA ? '1' : '.72'; }
+        if (ar) { ar.style.color = col; ar.style.opacity = isA ? '1' : '0'; ar.style.transform = isA ? 'translateX(0)' : 'translateX(-8px)'; }
+      });
+      if (pvG) pvG.style.background = 'radial-gradient(90% 70% at 30% 0%,' + glow[ci] + ',transparent 62%)';
+      if (pvN) pvN.style.color = col;
+      if (!pvT) return;
+      [pvT, pvD, pvN].forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(8px)'; });
+      clearTimeout(this._pv);
+      this._pv = setTimeout(() => {
+        pvN.textContent = row.getAttribute('data-i');
+        pvT.innerHTML = row.getAttribute('data-title');
+        pvD.textContent = row.getAttribute('data-desc');
+        pvN.style.opacity = '1';
+        pvT.style.opacity = '1'; pvT.style.transform = 'translateY(0)';
+        pvD.style.opacity = '.65'; pvD.style.transform = 'translateY(0)';
+      }, 180);
+    };
+    rows.forEach(r => {
+      on(r, 'mouseenter', () => { if (!this._mob) activate(r); });
+      on(r, 'click', () => {
+        if (this._mob) { const t = document.querySelector('#kontakt'); if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' }); }
+        else activate(r);
+      });
+    });
+    if (rows[0]) activate(rows[0]);
+
+    // faq
+    q('[data-faq]').forEach(item => {
+      const btn = item.querySelector('[data-fq]');
+      const ans = item.querySelector('[data-fa]');
+      const ic = item.querySelector('[data-fi]');
+      on(btn, 'click', () => {
+        const open = ans.style.maxHeight && ans.style.maxHeight !== '0px';
+        q('[data-faq]').forEach(o => {
+          const a = o.querySelector('[data-fa]'), i = o.querySelector('[data-fi]');
+          a.style.maxHeight = '0px'; if (i) i.style.transform = 'rotate(0deg)';
+        });
+        if (!open) { ans.style.maxHeight = ans.scrollHeight + 'px'; if (ic) ic.style.transform = 'rotate(135deg)'; }
+      });
+    });
+
+    // responsive switches (no stylesheet media queries)
+    const mq = window.matchMedia('(max-width: 900px)');
+    const apply = () => {
+      const m = mq.matches;
+      this._mob = m;
+      const dn = document.querySelector('[data-desknav]');
+      if (dn) dn.style.display = m ? 'none' : 'flex';
+      if (burger) burger.style.display = m ? 'inline-flex' : 'none';
+      const pv = document.querySelector('[data-preview]');
+      if (pv) pv.style.display = m ? 'none' : 'block';
+      q('[data-pmob]').forEach(p => { p.style.display = m ? 'block' : 'none'; });
+      if (!m && menuOpen) setMenu(false);
+      q('[data-faq] [data-fa]').forEach(a => { if (a.style.maxHeight && a.style.maxHeight !== '0px') a.style.maxHeight = a.scrollHeight + 'px'; });
+    };
+    apply();
+    if (mq.addEventListener) { mq.addEventListener('change', apply); this._off.push(() => mq.removeEventListener('change', apply)); }
+    on(window, 'resize', apply);
+
+    // seamless partner marquee
+    const track = document.querySelector('[data-track]');
+    if (track && !track.dataset.dup) {
+      track.dataset.dup = '1';
+      Array.from(track.children).forEach(c => track.appendChild(c.cloneNode(true)));
+      track.querySelectorAll('img').forEach(img => on(img, 'error', () => { img.style.display = 'none'; }));
+    }
+
+    // pointer feel on buttons
+    q('[data-btn]').forEach(b => {
+      on(b, 'mouseenter', () => { b.style.transform = 'translateY(-2px)'; });
+      on(b, 'mouseleave', () => { b.style.transform = 'translateY(0)'; });
+    });
+    if (cta) {
+      on(cta, 'mouseenter', () => { cta.style.transform = 'translateY(-2px)'; });
+      on(cta, 'mouseleave', () => { cta.style.transform = 'translateY(0)'; });
+    }
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
