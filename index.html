@@ -31,6 +31,23 @@ p{text-wrap:pretty;}
 @keyframes chMarquee{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
 @keyframes chScroll{0%{transform:translateY(0);opacity:0;}30%{opacity:1;}100%{transform:translateY(22px);opacity:0;}}
 @keyframes chFadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+/* Hero auf dem Telefon: keine volle Bildschirmhoehe, kompaktere Inhalte.
+   !important, weil die Basiswerte als Inline-Styles am Element haengen. */
+@media (max-width:700px){
+  [data-hero]{min-height:74svh!important;padding-bottom:40px!important;}
+  [data-hero-inner]{padding-top:92px!important;}
+  [data-hero-badge]{font-size:9.5px!important;letter-spacing:.13em!important;gap:9px!important;margin-bottom:13px!important;}
+  [data-hero-title]{font-size:clamp(40px,12.2vw,58px)!important;line-height:.92!important;}
+  [data-hero-row]{margin-top:19px!important;gap:19px!important;}
+  [data-hero-lead]{font-size:14.5px!important;line-height:1.55!important;}
+  [data-hero-cta]{gap:10px!important;}
+  [data-hero-cta]>a{padding:14px 22px!important;font-size:13.5px!important;}
+  [data-hero-stats]{grid-template-columns:repeat(2,1fr)!important;gap:15px 12px!important;margin-top:23px!important;padding-top:16px!important;}
+  [data-hero-stats]>div{padding-right:0!important;}
+  [data-hero-stats]>div>div:first-child{font-size:20px!important;}
+  [data-hero-stats]>div>div:last-child{font-size:9px!important;letter-spacing:.13em!important;margin-top:3px!important;}
+  [data-hero-scroll]{display:none!important;}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -80,28 +97,6 @@ p{text-wrap:pretty;}
 </script>
 </head>
 <body>
-<helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ernst Challiot &amp; Sohn GmbH — Ihre Glaserei in Mönchengladbach</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-:root{--acc:#0B63CE;--g:#00A45E;--y:#FFD400;--r:#E5251F;--b:#0B63CE;--bl:#4A93EA;--ink:#0D1114;--paper:#F2F2EF;}
-*{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;}
-body{margin:0;overflow-x:hidden;background:#0D1114;color:#0D1114;font-family:Archivo,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-a:hover{color:var(--acc);}
-p{text-wrap:pretty;}
-::selection{background:var(--acc);color:#0D1114;}
-@keyframes chMarquee{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
-@keyframes chScroll{0%{transform:translateY(0);opacity:0;}30%{opacity:1;}100%{transform:translateY(22px);opacity:0;}}
-@keyframes chFadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-</style>
-</helmet>
-
 <div style="background:#F2F2EF;color:#0D1114;overflow-x:clip;">
 
 <header data-hd style="position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px clamp(18px,4vw,56px);transition:background .6s cubic-bezier(.22,1,.36,1),box-shadow .6s,padding .6s;">
@@ -148,33 +143,33 @@ p{text-wrap:pretty;}
   </div>
 </div>
 
-<section id="start" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;background:#0D1114;color:#F2F2EF;overflow:hidden;padding:0 clamp(18px,4vw,56px) clamp(28px,4vw,48px);">
+<section id="start" data-hero style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;background:#0D1114;color:#F2F2EF;overflow:hidden;padding:0 clamp(18px,4vw,56px) clamp(28px,4vw,48px);">
   <video data-herovid autoplay muted loop playsinline preload="metadata" poster="assets/brand/ausstellung.jpg" aria-hidden="true" src="assets/brand/hero.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78;filter:brightness(1.1) saturate(1.05);"></video>
   <div style="position:absolute;inset:0;background:radial-gradient(85% 55% at 76% 6%,rgba(74,147,234,.30),transparent 62%),radial-gradient(65% 48% at 10% 90%,rgba(0,164,94,.20),transparent 64%),linear-gradient(180deg,rgba(13,17,20,.62) 0%,rgba(13,17,20,.16) 40%,rgba(13,17,20,.74) 100%);"></div>
-  <div style="position:relative;width:100%;max-width:1560px;margin:0 auto;padding-top:120px;">
-    <div data-reveal style="display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.72;margin-bottom:clamp(18px,3vw,34px);">
+  <div data-hero-inner style="position:relative;width:100%;max-width:1560px;margin:0 auto;padding-top:120px;">
+    <div data-reveal data-hero-badge style="display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;opacity:.72;margin-bottom:clamp(18px,3vw,34px);">
       <span style="display:flex;gap:4px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--g);"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--y);"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--bl);"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--r);"></span></span>SEIT VIER GENERATIONEN IN RHEYDT
     </div>
-    <h1 data-reveal style="margin:0;font-size:clamp(52px,11.4vw,178px);line-height:.86;font-weight:800;letter-spacing:-.045em;text-wrap:balance;text-shadow:0 4px 40px rgba(13,17,20,.45);">
+    <h1 data-reveal data-hero-title style="margin:0;font-size:clamp(52px,11.4vw,178px);line-height:.86;font-weight:800;letter-spacing:-.045em;text-wrap:balance;text-shadow:0 4px 40px rgba(13,17,20,.45);">
       Ihr Experte<br />für <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--y);">Glas</span>
     </h1>
-    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:clamp(26px,4vw,48px);">
-      <p data-reveal style="margin:0;max-width:44ch;font-size:clamp(15px,1.5vw,19px);line-height:1.6;opacity:.94;text-shadow:0 2px 18px rgba(13,17,20,.65);">
+    <div data-hero-row style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:clamp(26px,4vw,48px);">
+      <p data-reveal data-hero-lead style="margin:0;max-width:44ch;font-size:clamp(15px,1.5vw,19px);line-height:1.6;opacity:.94;text-shadow:0 2px 18px rgba(13,17,20,.65);">
         Duschabtrennungen, Spiegel, Küchenrückwände, Ganzglastüren und Glasmöbel — beraten, gemessen, in eigener Werkstatt gefertigt und montiert.
       </p>
-      <div data-reveal style="display:flex;flex-wrap:wrap;gap:12px;">
+      <div data-reveal data-hero-cta style="display:flex;flex-wrap:wrap;gap:12px;">
         <a href="#kontakt" data-nav data-btn style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:100px;background:var(--acc);color:#FFFFFF;font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),filter .4s;">Schnellanfrage<span style="font-size:16px;line-height:1;">→</span></a>
         <a href="tel:+49216649007" data-btn style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:100px;border:1px solid rgba(242,242,239,.45);background:rgba(13,17,20,.28);backdrop-filter:blur(8px);color:#F2F2EF;font-size:14px;font-weight:600;transition:transform .5s cubic-bezier(.22,1,.36,1),background .4s;">02166 49007</a>
       </div>
     </div>
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;margin-top:clamp(34px,5vw,64px);border-top:1px solid rgba(242,242,239,.28);padding-top:20px;text-shadow:0 2px 16px rgba(13,17,20,.6);">
+    <div data-reveal data-hero-stats style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;margin-top:clamp(34px,5vw,64px);border-top:1px solid rgba(242,242,239,.28);padding-top:20px;text-shadow:0 2px 16px rgba(13,17,20,.6);">
       <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--g);">4.</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">GENERATION</div></div>
       <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--y);">300 m²</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">AUSSTELLUNG</div></div>
       <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--bl);">4,7 ★</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">108 REZENSIONEN</div></div>
       <div style="padding-right:16px;"><div style="font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--r);">2</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;opacity:.55;margin-top:6px;">STANDORTE IN MG</div></div>
     </div>
   </div>
-  <div style="position:relative;display:flex;justify-content:center;margin-top:26px;height:26px;">
+  <div data-hero-scroll style="position:relative;display:flex;justify-content:center;margin-top:26px;height:26px;">
     <span style="display:block;width:1px;height:26px;background:linear-gradient(180deg,var(--acc),transparent);animation:chScroll 2.4s cubic-bezier(.4,0,.2,1) infinite;"></span>
   </div>
 </section>

@@ -24,6 +24,12 @@ const pick = (re, label) => {
 let head = pick(/<helmet>([\s\S]*?)<\/helmet>/, '<helmet>').trim();
 let body = pick(/<x-dc>([\s\S]*?)<\/x-dc>/, '<x-dc>').trim();
 
+// <helmet> steht im Artefakt innerhalb von <x-dc> und ist damit auch Teil des
+// Rumpfs — sonst landen Meta-Tags und <style> ein zweites Mal im <body>.
+const helmet = /<helmet>[\s\S]*?<\/helmet>/;
+if (!helmet.test(body)) throw new Error('<helmet> nicht im Rumpf gefunden');
+body = body.replace(helmet, '').trim();
+
 /* ---------- Assets: Webflow-CDN -> lokale Dateien ---------------------- */
 
 const CDN = 'https://cdn.prod.website-files.com/6204b8cffa0a212ec05ff34f/';
